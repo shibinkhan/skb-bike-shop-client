@@ -1,0 +1,20 @@
+.footer-container{
+    background-color: rgb(29, 29, 29);
+    color: rgb(212, 212, 212);
+}
+.text-color {
+    color: rgb(212, 212, 212);
+}
+.text-color:hover {
+    color: rgb(212, 212, 212);
+}
+.button {
+    border: none;
+    padding: 7.5px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+/* .button:hover {
+    transform: scale(1.05);
+} */
