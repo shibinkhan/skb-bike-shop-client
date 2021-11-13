@@ -16,7 +16,7 @@ By putting people at the center of everything we do, the team at EF Educational 
 ### `What We Offer?`
 Accually we are offering you the same bikes those are available in the market, but we are giving you the cheapest price and the best after sell service, also we have a home delivery system, Thank You.
 
-### `What We Offer?`
+### `Test Ride Facility`
 We have a 10km Test ride facility, We can give you a guarantee that no bike seller provided this offer before.
 
 ### `Our After Sell Service`

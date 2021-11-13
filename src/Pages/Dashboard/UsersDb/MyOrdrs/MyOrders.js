@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [singleOrder, setSingleOrder] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://guarded-sierra-27673.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -17,7 +17,7 @@ const MyOrders = () => {
     }, []);
 
     const { user } = useAuth();
-    
+
     const myOrders = singleOrder.filter(myOrder => myOrder.customerInfo.email === user.email);
     // console.log(myOrders);
 

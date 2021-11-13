@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
     const [singleOrder, setSingleOrder] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://guarded-sierra-27673.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

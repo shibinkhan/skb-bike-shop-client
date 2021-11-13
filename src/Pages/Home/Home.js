@@ -4,6 +4,8 @@ import TopBanner from './TopBanner/TopBanner';
 import './Home.css';
 import Products from './Products/Products';
 import Reviews from './Reviews/Reviews';
+import Faq from './Faq/Faq';
+import SocialMedia from './SocialMedia/SocialMedia';
 
 const Home = () => {
     return (
@@ -12,6 +14,8 @@ const Home = () => {
             <TopBanner />
             <Products />
             <Reviews />
+            <Faq />
+            <SocialMedia />
         </div>
     );
 };

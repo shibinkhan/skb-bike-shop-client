@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import Header from '../../../Home/Header/Header';
 import './AddAProduct.css';
 
 const AddAProduct = () => {
@@ -9,7 +8,7 @@ const AddAProduct = () => {
     const onSubmit = data => {
         console.log(data);
         reset();
-        axios.post('http://localhost:5000/bikes', data)
+        axios.post('https://guarded-sierra-27673.herokuapp.com/bikes', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {

@@ -9,13 +9,6 @@ import BikeDetails from './Pages/Explore/BikeDetails';
 import Login from './Pages/SignUpInOut/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/SignUpInOut/PrivateRoute/PrivateRoute';
-import AddAProduct from './Pages/Dashboard/AdminsDb/AddAProduct/AddAProduct';
-import ManageAllOrders from './Pages/Dashboard/AdminsDb/ManageAllOrders/ManageAllOrders';
-import MyOrders from './Pages/Dashboard/UsersDb/MyOrdrs/MyOrders';
-import Payment from './Pages/Dashboard/UsersDb/Payment/Payment';
-import Review from './Pages/Dashboard/UsersDb/Review/Review';
-import MakeAdmin from './Pages/Dashboard/AdminsDb/MakeAdmin/MakeAdmin';
-import ManageProducts from './Pages/Dashboard/AdminsDb/ManageProducts/ManageProducts';
 import Resister from './Pages/SignUpInOut/Resister/Resister';
 
 function App() {
@@ -45,30 +38,6 @@ function App() {
               <BikeDetails></BikeDetails>
             </PrivateRoute>
 
-            
-
-            {/* <PrivateRoute path="/myorders">
-              <MyOrders></MyOrders>
-            </PrivateRoute> */}
-            
-            {/* <PrivateRoute path="/payment">
-              <Payment></Payment>
-            </PrivateRoute> */}
-
-            
-
-            {/* <PrivateRoute path="/addanewservice">
-            <AddANewService></AddANewService>
-          </PrivateRoute> */}
-
-            {/* <Route path="/about">
-            <About></About>
-          </Route> */}
-            
-            {/* <Route path="/contact">
-            <Contact></Contact>
-          </Route> */}
-
             <Route path="/login">
               <Login></Login>
             </Route>
@@ -76,10 +45,6 @@ function App() {
             <Route path="/signup">
               <Resister></Resister>
             </Route>
-
-            {/* <Route path="/resister">
-            <Resister></Resister>
-          </Route> */}
 
             <Route path="*">
               <NotFound></NotFound>

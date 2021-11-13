@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-import Header from '../Home/Header/Header';
 import './Dashboard.css';
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import MyOrders from './UsersDb/MyOrdrs/MyOrders';
@@ -19,13 +18,13 @@ const Dashboard = () => {
 
     return (
         <div className="vh">
-            <Header />  
             <div className="container">
                 <div className="row g-4">
                     <div className="col-2 dash-side-nav">
+                        <br />
+                        <NavLink className="" to="/home">Home</NavLink>
                         {!admin ?
                             <div>
-                                <br />
                                 <NavLink className="" to={`${url}`}>My Orders</NavLink>
                                 <br />
                                 <NavLink className="" to={`${url}/payment`}>Payments</NavLink>
@@ -33,7 +32,6 @@ const Dashboard = () => {
                                 <NavLink className="" to={`${url}/review`}>Review</NavLink>
                             </div> :
                             <div>
-                                <br />
                                 <NavLink className="" to={`${url}`}>Manage All Orders</NavLink>
                                 <br />
                                 <NavLink className="" to={`${url}/addaproduct`}>Add a Product</NavLink>
@@ -44,17 +42,14 @@ const Dashboard = () => {
                                 <br />
                                 <br />
                             </div>
-
                         }
                         <button className="button" onClick={logOut}>Log Out</button>
                     </div>
+
                     <div className="col-10">
                         <Switch>
                             <Route exact path={`${path}`}>
-                                {!admin ? 
-                                    <MyOrders></MyOrders> :
-                                    <ManageAllOrders></ManageAllOrders>
-                                }
+                                {!admin ? <MyOrders /> : <ManageAllOrders />}
                             </Route>
 
                             <Route path={`${path}/payment`}>

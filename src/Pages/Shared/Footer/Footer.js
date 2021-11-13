@@ -27,7 +27,7 @@ const Footer = () => {
                             <ul className="ps-0 d-flex justify-content-center mt-3">
                                 <NavLink to="/home" className="text-color nav-link">Home</NavLink>
                                 <NavLink to="/about" className="text-color nav-link">About Us</NavLink>
-                                <NavLink to="/about" className="text-color nav-link">Find Us</NavLink>
+                                <NavLink to="/about" className="text-color nav-link">ShowRooms</NavLink>
                             </ul>
                         </div>
                     </div>

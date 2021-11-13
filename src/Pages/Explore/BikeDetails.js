@@ -9,7 +9,7 @@ const BikeDetails = () => {
     const [singleBike, setSingleBike] = useState({});
     const { bikeId } = useParams();
     const { user } = useAuth();
-    
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
@@ -25,7 +25,7 @@ const BikeDetails = () => {
             bikeInfo: bikeInfo,
             customerInfo: data
         };
-        axios.post('http://localhost:5000/orders', orderInfo)
+        axios.post('https://guarded-sierra-27673.herokuapp.com/orders', orderInfo)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -35,7 +35,7 @@ const BikeDetails = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${bikeId}`)
+        fetch(`https://guarded-sierra-27673.herokuapp.com/bikes/${bikeId}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

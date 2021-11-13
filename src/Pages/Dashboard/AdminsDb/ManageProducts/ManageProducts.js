@@ -7,7 +7,7 @@ const ManageProducts = () => {
 
     // services
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://guarded-sierra-27673.herokuapp.com/bikes')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

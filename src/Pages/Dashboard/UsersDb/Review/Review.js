@@ -8,7 +8,7 @@ const Review = () => {
     const onSubmit = data => {
         console.log(data);
         reset();
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://guarded-sierra-27673.herokuapp.com/reviews', data)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
@@ -22,7 +22,7 @@ const Review = () => {
             <h1 className="fw-bold color my-3">Add a Review</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder="YourName..." {...register("name")} />
-                <input type="number" placeholder="Rating..." {...register("rating")} />
+                <input type="number" placeholder="Rating...(0-5)" {...register("rating")} />
                 <textarea placeholder="Your Review..." {...register("review")} />
                 <input className="button addService w-25" type="submit" value="Add This Review" />
             </form>

@@ -1,16 +1,13 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const MakeAdmin = () => {
-    const [email, setEmail] = useState('');
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         reset();
-        // setEmail(data.email);
         const user = { email: data.email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://guarded-sierra-27673.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -25,6 +22,7 @@ const MakeAdmin = () => {
                 };
             });
     };
+
     return (
         <div className="vh">
             <form onSubmit={handleSubmit(onSubmit)}>
