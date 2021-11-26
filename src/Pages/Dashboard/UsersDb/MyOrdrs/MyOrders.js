@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../../Hooks/useAuth';
-import Header from '../../../Home/Header/Header';
 import './MyOrdrs.css';
 import Order from './Order';
 
 const MyOrders = () => {
     const [singleOrder, setSingleOrder] = useState([]);
+    const { user } = useAuth();
 
     useEffect(() => {
         fetch('https://guarded-sierra-27673.herokuapp.com/orders')
@@ -16,12 +16,8 @@ const MyOrders = () => {
             });
     }, []);
 
-    const { user } = useAuth();
-
     const myOrders = singleOrder.filter(myOrder => myOrder.customerInfo.email === user.email);
     // console.log(myOrders);
-
-
 
     return (
         <div>

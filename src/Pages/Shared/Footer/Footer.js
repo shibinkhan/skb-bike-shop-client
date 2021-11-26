@@ -20,7 +20,7 @@ const Footer = () => {
                                 <h5 className="mb-4">SKB NEWSLETTER</h5>
                                 <form className="input-group">
                                     <input type="text" className="form-control me-2" placeholder="Insert Your Email Here..." aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                    <button className="button" type="submit">Submit</button>
+                                    <button className="button2" type="submit">Submit</button>
                                 </form>
                             </div>
 

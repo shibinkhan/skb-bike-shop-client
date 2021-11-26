@@ -20,33 +20,26 @@ const Dashboard = () => {
         <div className="vh">
             <div className="container">
                 <div className="row g-4">
-                    <div className="col-2 dash-side-nav">
+                    <div className="col-md-3 dash-side-nav-main">
                         <br />
-                        <NavLink className="" to="/home">Home</NavLink>
+                        <NavLink className="dashboard-side-nav" to="/home">Home</NavLink>
                         {!admin ?
                             <div>
-                                <NavLink className="" to={`${url}`}>My Orders</NavLink>
-                                <br />
-                                <NavLink className="" to={`${url}/payment`}>Payments</NavLink>
-                                <br />
-                                <NavLink className="" to={`${url}/review`}>Review</NavLink>
+                                <NavLink className="dashboard-side-nav" to={`${url}`}>My Orders</NavLink>
+                                <NavLink className="dashboard-side-nav" to={`${url}/payment`}>Payments</NavLink>
+                                <NavLink className="dashboard-side-nav" to={`${url}/review`}>Review</NavLink>
                             </div> :
                             <div>
-                                <NavLink className="" to={`${url}`}>Manage All Orders</NavLink>
-                                <br />
-                                <NavLink className="" to={`${url}/addaproduct`}>Add a Product</NavLink>
-                                <br />
-                                <NavLink className="" to={`${url}/manageproducts`}>Manage Products</NavLink>
-                                <br />
-                                <NavLink className="" to={`${url}/makeadmin`}>Make Admin</NavLink>
-                                <br />
-                                <br />
+                                <NavLink className="dashboard-side-nav" to={`${url}`}>Manage All Orders</NavLink>
+                                <NavLink className="dashboard-side-nav" to={`${url}/manageproducts`}>Manage Products</NavLink>
+                                <NavLink className="dashboard-side-nav" to={`${url}/addaproduct`}>Add a Product</NavLink>
+                                <NavLink className="dashboard-side-nav" to={`${url}/makeadmin`}>Make Admin</NavLink>
                             </div>
                         }
-                        <button className="button" onClick={logOut}>Log Out</button>
+                        <button className="dashboard-side-nav dash-log-out w-100" onClick={logOut}>Log Out</button>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-md-9">
                         <Switch>
                             <Route exact path={`${path}`}>
                                 {!admin ? <MyOrders /> : <ManageAllOrders />}

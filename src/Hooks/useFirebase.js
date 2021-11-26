@@ -19,7 +19,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
 
                 // send data to database
                 saveUserInfo(user.email, user.displayName, 'PUT');
@@ -41,10 +41,9 @@ const useFirebase = () => {
         setIsloading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // name,
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
+                // console.log(user);
                 const newUser = { email, displayName: name };
                 setUser(newUser);
 
@@ -78,7 +77,7 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
+                // console.log(user);
 
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -124,7 +123,7 @@ const useFirebase = () => {
     // saveUserInfo
     const saveUserInfo = (email, displayName, method) => {
         const user = { email, displayName };
-        console.log(user);
+        // console.log(user);
         fetch('https://guarded-sierra-27673.herokuapp.com/users', {
             method: method,
             headers: {
@@ -132,17 +131,17 @@ const useFirebase = () => {
             },
             body: JSON.stringify(user)
         })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data);
-        // });
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+        });
     };
 
     useEffect(() => {
         fetch(`https://guarded-sierra-27673.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setAdmin(data.admin);
             });
     }, [user.email]);
@@ -155,7 +154,8 @@ const useFirebase = () => {
         isLoading,
         signUp,
         signIn,
-        admin
+        admin,
+        authError
     };
 };
 

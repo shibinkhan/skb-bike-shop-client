@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ManageOrder from './ManageOrder';
 import './ManageAllOrders.css';
-import Header from '../../../Home/Header/Header';
 
 const ManageAllOrders = () => {
     const [singleOrder, setSingleOrder] = useState([]);

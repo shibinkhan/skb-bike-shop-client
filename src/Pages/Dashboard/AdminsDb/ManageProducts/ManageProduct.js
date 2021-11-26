@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ManageProduct = ({ bike }) => {
-    const { _id, name, img, price, description } = bike;
+    const { _id, name, img } = bike;
 
     const [bikes, setBikes] = useState([]);
 
@@ -9,7 +9,7 @@ const ManageProduct = ({ bike }) => {
         fetch('https://guarded-sierra-27673.herokuapp.com/bikes')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setBikes(data);
             });
     }, []);
@@ -39,7 +39,7 @@ const ManageProduct = ({ bike }) => {
                 <div className="card-body">
                     <h3 className="color fw-bold card-title">{name}</h3>
                 </div>
-                <button onClick={() => { handleDeleteBike(_id) }} className="button mb-3">Delete This Bike</button>
+                <button onClick={() => { handleDeleteBike(_id) }} className="mx-auto mx-3 mb-3 button">Delete This Bike</button>
             </div>
         </div>
     );

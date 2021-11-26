@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Allbikes.css';
 
 const Bike = ({ bike }) => {
     const { _id, name, img, price, description } = bike;
@@ -13,7 +14,7 @@ const Bike = ({ bike }) => {
                     <p>Price: <span className="fw-bold">BDT {price} Only</span></p>
                     <p>{description}</p>
                 </div>
-                <NavLink to={`/bike/${_id}`}><button className="button mb-5 px-5">Procced to Buy</button></NavLink>
+                <NavLink to={`/bike/${_id}`}><button className="button mb-5 px-4">Procced to Buy</button></NavLink>
             </div>
         </div>
     );

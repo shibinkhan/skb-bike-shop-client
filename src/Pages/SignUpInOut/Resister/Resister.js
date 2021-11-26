@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Header from '../../Home/Header/Header';
 import { useHistory, useLocation } from 'react-router';
+import './Resister.css';
 
 const Resister = () => {
     const { signUp } = useAuth();
@@ -11,7 +12,7 @@ const Resister = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         if (data.password !== data.password2) {
             alert('Password did not matched!');
             return;
@@ -20,19 +21,21 @@ const Resister = () => {
     };
 
     return (
-        <div className="add-service vh">
+        <div className="resister vh">
             <Header />
-            <h1 className="fw-bold color my-3">Resistration</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="name" placeholder="Full Name..." {...register("displayName")} />
-                <input type="email" placeholder="Email..." {...register("email")} />
-                <input type="password" placeholder="Password..." {...register("password")} />
-                <input type="password" placeholder="Re-type Password..." {...register("password2")} />
-                <input className="button addService w-25" placeholder="" type="submit" value="Create Account" />
-            </form>
-            <hr />
-            <p>Already Have Account?</p>
-            <NavLink className="" to="/login">Log In</NavLink>
+            <div className="container">
+                <h1 className="fw-bold color my-3">Resistration</h1>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input type="name" placeholder="Full Name..." {...register("displayName", { required: true })} />
+                    <input type="email" placeholder="Email..." {...register("email", { required: true })} />
+                    <input type="password" placeholder="Password..." {...register("password", { required: true })} />
+                    <input type="password" placeholder="Re-type Password..." {...register("password2", { required: true })} />
+                    <input className="button addService w-25" placeholder="" type="submit" value="Create" />
+                </form>
+                <hr />
+                <p>Already Have Account?</p>
+                <NavLink to="/login"><button className="button w-25">Log In</button></NavLink>
+            </div>
         </div>
     );
 };

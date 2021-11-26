@@ -1,5 +1,8 @@
+.header {
+    background-color: rgb(29, 29, 29);
+}
 .main-navbar {
-    margin: 10px;
+    margin: 10px 0px;
 }
 .navbar-brand {
     font-size: 25px;
@@ -19,11 +22,4 @@
 .nav-bar-btn {
     background-color: rgb(29, 29, 29);
     font-weight: 500;
-}
-.dropdown-toggle {
-    
-}
-.nav-bar-dropdown {
-    background-color: rgb(163, 253, 223);
-    padding: 10px;
 }

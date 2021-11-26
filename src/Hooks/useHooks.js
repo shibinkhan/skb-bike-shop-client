@@ -1,22 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 
 const useHooks = () => {
-    const [services, setServices] = useState([]);
     const [singleOrder, setSingleOrder] = useState([]);
 
-    // services
     useEffect(() => {
-        fetch('https://fast-taiga-62917.herokuapp.com/plans')
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                setServices(data);
-            });
-    }, []);
-
-    // plans
-    useEffect(() => {
-        fetch('https://fast-taiga-62917.herokuapp.com/orders')
+        fetch('https://guarded-sierra-27673.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -24,10 +13,62 @@ const useHooks = () => {
             });
     }, []);
 
+    const [bikes, setBikes] = useState([]);
+
+    useEffect(() => {
+        fetch('https://guarded-sierra-27673.herokuapp.com/bikes')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setBikes(data);
+            });
+    }, []);
+
+    const { bikeId } = useParams();
+    const [singleBike, setSingleBike] = useState({});
+    useEffect(() => {
+        fetch(`https://guarded-sierra-27673.herokuapp.com/bikes/${bikeId}`)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setSingleBike(data);
+            });
+    }, [bikeId]);
+
+    const [sixBikes, setSixBikes] = useState([]);
+
+    // services
+    useEffect(() => {
+        fetch('https://guarded-sierra-27673.herokuapp.com/bikes/six')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setSixBikes(data);
+            });
+    }, []);
+
+    const [singleReview, setSingleReview] = useState([]);
+
+    useEffect(() => {
+        fetch('https://guarded-sierra-27673.herokuapp.com/reviews')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setSingleReview(data);
+            });
+    }, []);
+
     return {
-        services,
         singleOrder,
-        setSingleOrder
+        setSingleOrder,
+        bikes,
+        setBikes,
+        singleBike,
+        setSingleBike,
+        sixBikes,
+        setSixBikes,
+        singleReview,
+        setSingleReview
     };
 };
 
